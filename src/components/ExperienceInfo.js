@@ -2,8 +2,8 @@ import React from 'react'
 
 const ExperienceInfo = () => {
   return (
-    <section>
-      <h2>Education info</h2>
+    <section className="container-fluid">
+      <h2>Experience info</h2>
     </section>
   )
 }
