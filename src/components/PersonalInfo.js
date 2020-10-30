@@ -2,7 +2,6 @@ import React from 'react'
 import { useFormik } from 'formik';
 
 import Input from './Input'
-import NextStepBtn from './NextStepBtn'
 
 const PersonalInfo = ({ setCurrentStep, setPersonalInfo }) => {
 
@@ -45,9 +44,8 @@ const PersonalInfo = ({ setCurrentStep, setPersonalInfo }) => {
     },
     validate,
     onSubmit: values => {
-      setCurrentStep(prevCount => prevCount + 1);
+      setCurrentStep(prev => prev + 1)
       setPersonalInfo(values)
-      alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -79,7 +77,9 @@ const PersonalInfo = ({ setCurrentStep, setPersonalInfo }) => {
           title='Phone'
           formik={formik}
         />
-        <NextStepBtn setCurrentStep={setCurrentStep} />
+        <div className='form-group'>
+          <button type='submit' className='btn btn-primary btn-lg'>Submit</button>
+        </div>
       </form>
     </section>
   )

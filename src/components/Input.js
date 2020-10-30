@@ -8,9 +8,14 @@ const Input = ({ type, id, title, formik }) => {
         id={id}
         type={type}
         className='form-control'
-        {...formik.getFieldProps(id)}
+        onChange={formik.handleChange}
+        value={formik.values[id]}
+
       />
-      {formik.touched[id] && formik.errors[id] ? <div className='form-text text-danger'>{formik.errors[id]}</div> : null}
+      {formik.touched[id] && formik.errors[id]
+        ? <div className='form-text text-danger'>{formik.errors[id]}</div>
+        : null
+      }
     </div>
   )
 }
