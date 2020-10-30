@@ -8,16 +8,12 @@ import StepNavBtn from './StepNavBtn'
 
 function App() {
   const [currentStep, setCurrentStep] = useState(0)
-  const [personalInfo, setPersonalInfo] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-  })
+  const [personalInfo, setPersonalInfo] = useState({})
   const [educationInfo, setEducationInfo] = useState([])
+  const [experieceInfo, setExperienceInfo] = useState([])
 
   useEffect(() => {
-    console.log(personalInfo, educationInfo);
+    console.log(personalInfo, educationInfo, experieceInfo);
   })
   return (
     <section className="container-fluid">
@@ -25,7 +21,7 @@ function App() {
       {currentStep === 0 ? <StepNavBtn setCurrentStep={setCurrentStep} next={true} /> : null}
       {currentStep === 1 ? <PersonalInfo setCurrentStep={setCurrentStep} setPersonalInfo={setPersonalInfo} educationInfo={educationInfo} /> : null}
       {currentStep === 2 ? <EducationInfo setCurrentStep={setCurrentStep} setEducationInfo={setEducationInfo} educationInfo={educationInfo} /> : null}
-      {currentStep === 3 ? <ExperieceInfo setCurrentStep={setCurrentStep} /> : null}
+      {currentStep === 3 ? <ExperieceInfo setCurrentStep={setCurrentStep} setExperienceInfo={setExperienceInfo} experieceInfo={experieceInfo} /> : null}
     </section>
   );
 }

@@ -5,7 +5,7 @@ const StepNavBtn = ({ setCurrentStep, next }) => {
     <div className='form-group'>
       <button
         onClick={() => setCurrentStep(prev => next ? prev + 1 : prev - 1)}
-        className='btn btn-primary btn-lg'>
+        className='btn btn-primary btn-lg btn-block'>
         {next ? 'Next step' : 'Previous step'}
       </button>
     </div>

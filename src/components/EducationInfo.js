@@ -20,12 +20,12 @@ const EducationInfo = ({ setEducationInfo, setCurrentStep, educationInfo }) => {
     }
     if (!values.startDateOfStudy) {
       errors.startDateOfStudy = 'Required';
-    } else if (/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i.test(values.email)) {
+    } else if (/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i.test(values.startDateOfStudy)) {
       errors.startDateOfStudy = 'Invalid date';
     }
     if (!values.endDateOfStudy) {
       errors.endDateOfStudy = 'Required';
-    } else if (/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i.test(values.email)) {
+    } else if (/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i.test(values.endDateOfStudy)) {
       errors.endDateOfStudy = 'Invalid date';
     }
 
@@ -83,8 +83,8 @@ const EducationInfo = ({ setEducationInfo, setCurrentStep, educationInfo }) => {
           </form>
           : <>
             <div className='form-group'>
-              {educationInfo.map(dataObj =>
-                <div className='list-group'>
+              {educationInfo.map((dataObj, index) =>
+                <div key={index} className='list-group'>
                   <h5 className='mb-1'>{dataObj.schoolName}</h5>
                   <p className='mb-1'>{dataObj.titleOfStudy}</p>
                   <p className='pb-1 border-bottom'>{dataObj.startDateOfStudy} - {dataObj.endDateOfStudy}</p>
@@ -94,7 +94,7 @@ const EducationInfo = ({ setEducationInfo, setCurrentStep, educationInfo }) => {
             <div className='form-group'>
               <button className='btn btn-primary btn-lg btn-block' onClick={() => setAddingInfo(true)}>Add school</button>
             </div>
-            <div className='form-group d-flex'>
+            <div className='form-group'>
               <StepNavBtn setCurrentStep={setCurrentStep} next={true} />
             </div>
           </>}
