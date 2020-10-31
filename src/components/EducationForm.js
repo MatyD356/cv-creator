@@ -37,7 +37,8 @@ const EducationForm = ({ setAddingInfo, setEducationInfo, dataObj, setItemToEdit
       onSubmit={values => {
         dataObj
           ? setEducationInfo(prev => {
-            prev[0] = values
+            const index = prev.indexOf(dataObj)
+            prev[index] = values
             return [...prev]
           })
           : setEducationInfo(prev => [...prev, values])
