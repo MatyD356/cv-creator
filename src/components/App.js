@@ -20,7 +20,7 @@ function App() {
     <section className="container-fluid">
       <Navbar currentStep={currentStep} />
       {currentStep === 0 ? <StepNavBtn setCurrentStep={setCurrentStep} next={true} /> : null}
-      {currentStep === 1 ? <PersonalInfo setCurrentStep={setCurrentStep} setPersonalInfo={setPersonalInfo} educationInfo={educationInfo} /> : null}
+      {currentStep === 1 ? <PersonalInfo setCurrentStep={setCurrentStep} setPersonalInfo={setPersonalInfo} personalInfo={personalInfo} /> : null}
       {currentStep === 2 ? <EducationInfo setCurrentStep={setCurrentStep} setEducationInfo={setEducationInfo} educationInfo={educationInfo} /> : null}
       {currentStep === 3 ? <ExperieceInfo setCurrentStep={setCurrentStep} setExperienceInfo={setExperienceInfo} experieceInfo={experieceInfo} /> : null}
       {currentStep === 4 ? <Summary personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experieceInfo} setCurrentStep={setCurrentStep} /> : null}
