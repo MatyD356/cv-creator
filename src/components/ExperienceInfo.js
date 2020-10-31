@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 
 import StepNavBtn from './StepNavBtn'
 import Input from './Input'
+import DataCard from './DataCard';
 
 const ExperienceInfo = ({ setCurrentStep, setExperienceInfo, experieceInfo }) => {
   const [addingInfo, setAddingInfo] = useState(false)
@@ -73,21 +74,14 @@ const ExperienceInfo = ({ setCurrentStep, setExperienceInfo, experieceInfo }) =>
             />
           </div>
           <div className='form-group'>
-            <button type='submit' className='btn btn-primary btn-lg'>Add</button>
+            <button type='submit' className='btn btn-success btn-lg'>Add</button>
+            <button onClick={() => setAddingInfo(false)} className='btn btn-primary btn-lg ml-4'>Cancel</button>
           </div>
         </form>
         : <>
+          <DataCard dataArray={experieceInfo} />
           <div className='form-group'>
-            {experieceInfo.map((dataObj, index) =>
-              <div key={index} className='list-group'>
-                <h5 className='mb-1'>{dataObj.companyName}</h5>
-                <p className='mb-1'>{dataObj.positionTitle}</p>
-                <p className='pb-1 border-bottom'>{dataObj.startDateOfWork} - {dataObj.endDateOfWork}</p>
-              </div>
-            )}
-          </div>
-          <div className='form-group'>
-            <button className='btn btn-primary btn-lg btn-block' onClick={() => setAddingInfo(true)}>Add experience</button>
+            <button className='btn btn-success btn-lg btn-block' onClick={() => setAddingInfo(true)}>Add experience</button>
           </div>
           <div className='form-group'>
             <StepNavBtn setCurrentStep={setCurrentStep} next={true} />
