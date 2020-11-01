@@ -9,7 +9,7 @@ const ExperienceInfo = ({ setCurrentStep, setExperienceInfo, experieceInfo }) =>
   const [itemToEdit, setItemToEdit] = useState(null)
 
   return (
-    <section className="container-fluid">
+    <section className="container">
       <h2>Experience info</h2>
       {addingInfo
         ? <ExperienceForm setAddingInfo={setAddingInfo} setExperienceInfo={setExperienceInfo} dataObj={itemToEdit ? itemToEdit : null} setItemToEdit={setItemToEdit} />

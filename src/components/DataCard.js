@@ -10,8 +10,8 @@ const DataCard = ({ dataArray, changeState, setAddingInfo, setItemToEdit }) => {
           <h5 className='mb-1 d-flex justify-content-between align-items-center'>
             <span>{dataObj[keys[0]]}</span>
             <span>
-              <span onClick={() => { setAddingInfo(true); setItemToEdit(dataObj) }} className="badge badge-primary"><i className="fas fa-edit"></i></span>
-              <span onClick={() => { changeState(prev => prev.filter((item, i) => i !== index)) }} className="badge badge-danger ml-2"><i className="fas fa-trash"></i></span>
+              {setAddingInfo ? <span onClick={() => { setAddingInfo(true); setItemToEdit(dataObj) }} className="badge badge-primary"><i className="fas fa-edit"></i></span> : null}
+              {changeState ? <span onClick={() => { changeState(prev => prev.filter((item, i) => i !== index)) }} className="badge badge-danger ml-2"><i className="fas fa-trash"></i></span> : null}
             </span>
           </h5>
           <p className='mb-1'>{dataObj[keys[1]]}</p>

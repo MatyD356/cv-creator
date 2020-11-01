@@ -3,7 +3,7 @@ import React from 'react'
 const Summary = ({ personalInfo, educationInfo, experienceInfo, setCurrentStep }) => {
 
   return (
-    <section className='container-fluid'>
+    <section className='container'>
       <h2>Summary</h2>
       <h3>Personal information
         <span onClick={() => setCurrentStep(1)} className="badge badge-primary ml-2"><i className="fas fa-edit"></i></span>
@@ -32,6 +32,7 @@ const Summary = ({ personalInfo, educationInfo, experienceInfo, setCurrentStep }
         <p className='pb-1 border-bottom'>Date of study: {item.startDateOfWork} - {item.endDateOfWork}</p>
       </div>)
       }
+      <button onClick={() => setCurrentStep(prev => prev + 1)} className='btn btn-primary btn-lg btn-block'>Finish</button>
     </section>
   )
 }

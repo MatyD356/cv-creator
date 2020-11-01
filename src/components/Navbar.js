@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = ({ currentStep }) => {
   return (
-    <nav className="container-fluid ">
+    <nav className="container text-center">
       <h1>CV creator</h1>
       {currentStep >= 1 ? <div className="progress form-group">
         <div

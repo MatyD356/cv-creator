@@ -72,8 +72,8 @@ const ExperienceForm = ({ setAddingInfo, setExperienceInfo, dataObj, setItemToEd
             />
           </div>
           <div className='form-group'>
-            <button type='submit' className='btn btn-success btn-lg'>Add</button>
-            <button type='button' onClick={() => { setAddingInfo(false); setItemToEdit(null) }} className='btn btn-primary btn-lg ml-4'>Cancel</button>
+            <button type='button' onClick={() => { setAddingInfo(false); setItemToEdit(null) }} className='btn btn-primary btn-lg'>Cancel</button>
+            <button type='submit' className='btn btn-success btn-lg ml-4'>Add</button>
           </div>
         </form>)}
     </Formik>

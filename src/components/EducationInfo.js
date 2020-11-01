@@ -9,7 +9,7 @@ const EducationInfo = ({ setEducationInfo, setCurrentStep, educationInfo }) => {
   const [itemToEdit, setItemToEdit] = useState(null)
 
   return (
-    <section className="container-fluid">
+    <section className="container">
       <h2>Education info</h2>
       <div className='form-group'>
         {addingInfo

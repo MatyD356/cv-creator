@@ -6,7 +6,7 @@ import Input from './Input'
 const PersonalInfo = ({ setCurrentStep, setPersonalInfo, personalInfo }) => {
 
   return (
-    <section className='container-fluid'>
+    <section className='container'>
       <h2>Personal info</h2>
       <Formik
         initialValues={{
@@ -74,7 +74,7 @@ const PersonalInfo = ({ setCurrentStep, setPersonalInfo, personalInfo }) => {
             formik={props}
           />
           <div className='form-group'>
-            <button type='submit' className='btn btn-primary btn-lg'>Submit</button>
+            <button type='submit' className='btn btn-primary btn-lg btn-block'>Submit</button>
           </div>
         </form>)}
       </Formik>
